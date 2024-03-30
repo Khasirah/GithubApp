@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Github App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="searchbar_hint">github username</string>
+    <string name="followers">Follower %1$s</string>
+    <string name="following">Following %1$s</string>
+    <string name="tab_text_1">Follower</string>
+    <string name="tab_text_2">Following</string>
+    <string name="content_tab_text">This is Tab %1$d</string>
+    <string name="nothing_text">Belum ada pencarian</string>
+    <string name="favourites">Favourites</string>
+    <string name="preferences">Preferences</string>
+    <string name="detail_user">Detail User</string>
+</resources>

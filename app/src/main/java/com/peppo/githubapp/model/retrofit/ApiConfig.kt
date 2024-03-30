@@ -1,5 +1,6 @@
 package com.peppo.githubapp.model.retrofit
 
+import com.peppo.githubapp.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -12,7 +13,7 @@ class ApiConfig {
             val authInterceptor = Interceptor { chain ->
                 val req = chain.request()
                 val requestHeaders = req.newBuilder()
-                    .addHeader("Authorization", "<your api key>")
+                    .addHeader("Authorization", BuildConfig.GIT_API)
                     .build()
                 chain.proceed(requestHeaders)
             }

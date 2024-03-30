@@ -1,3 +1,6 @@
+import java.io.FileInputStream
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
@@ -17,6 +20,19 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        //load the values from .properties file
+        val properties = Properties()
+        properties.load(FileInputStream(rootProject.file("local.properties")))
+
+        //return empty key in case something goes wrong
+        val apiKey = properties.getProperty("gitApi") ?: ""
+
+        buildConfigField(
+            type = "String",
+            name = "GIT_API",
+            value = "\"$apiKey\""
+        )
     }
 
     buildTypes {
@@ -37,6 +53,7 @@ android {
     }
     buildFeatures {
         viewBinding = true
+        buildConfig = true
     }
 }
 
